@@ -18,6 +18,5 @@ mongoose.connect(process.env.DB_URL, {
 
 app.use('/api', routes);
 
-app.listen(process.env.PORT, () =>
-  console.log(`Escutando em ${process.env.PORT}...`)
-);
+const port = process.env.PORT || 80;
+app.listen(port, () => console.log(`Escutando em ${process.env.PORT}...`));
