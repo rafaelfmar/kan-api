@@ -2,11 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const routes = require('./routes');
+// Use .env file config
+require('dotenv').config();
 
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 
 app.use(cors());
 
@@ -16,4 +18,6 @@ mongoose.connect(process.env.DB_URL, {
 
 app.use('/api', routes);
 
-app.listen(process.env.PORT, () => console.log(`Escutando em ${process.env.PORT}...`));
+app.listen(process.env.PORT, () =>
+  console.log(`Escutando em ${process.env.PORT}...`)
+);
