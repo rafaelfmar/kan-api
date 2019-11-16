@@ -11,7 +11,6 @@
   },
   "scripts": {
     "start": "node ./src/app.js",
-    "build": "node ./src/app.js",
     "dev": "nodemon ./src/app.js",
     "lint": "eslint src -c .eslintrc.json --ext js,jsx"
   },
