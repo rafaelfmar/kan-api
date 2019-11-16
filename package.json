@@ -6,6 +6,9 @@
   "repository": "https://github.com/felipeseolin/kan-api.git",
   "author": "Felipe Seolin Bento <felipe.seolin@hotmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": "12.13.0"
+  },
   "scripts": {
     "start": "node src/app.js",
     "build": "node src/app.js",
