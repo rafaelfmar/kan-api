@@ -4,6 +4,7 @@ const routes = express.Router();
 
 const BoardController = require('./controllers/BoardController');
 const ListController = require('./controllers/ListController');
+const CardController = require('./controllers/CardController');
 
 routes.get('/', (req, res) => res.send('Kan API'));
 
@@ -19,5 +20,11 @@ routes.post('/lists', ListController.store);
 routes.get('/lists/:id', ListController.show);
 routes.patch('/lists/:id', ListController.update);
 routes.delete('/lists/:id', ListController.destroy);
+// Cards
+routes.get('/cards', CardController.index);
+routes.post('/cards', CardController.store);
+routes.get('/cards/:id', CardController.show);
+routes.patch('/cards/:id', CardController.update);
+routes.delete('/cards/:id', CardController.destroy);
 
 module.exports = routes;
