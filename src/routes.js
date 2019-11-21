@@ -14,6 +14,7 @@ routes.post('/boards', BoardController.store);
 routes.get('/boards/:id', BoardController.show);
 routes.patch('/boards/:id', BoardController.update);
 routes.delete('/boards/:id', BoardController.destroy);
+routes.get('/boards/all/:id', BoardController.all);
 // Lists
 routes.get('/lists', ListController.index);
 routes.post('/lists', ListController.store);
