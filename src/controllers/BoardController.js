@@ -47,9 +47,19 @@ module.exports = {
   async destroy(req, res) {
     await Board.findByIdAndRemove(req.params.id);
     const lists = await List.find({ _board: req.params.id });
-    lists.map(async (list) => await Card.deleteMany({ _list: list._id }));
+    lists.map(async list => await Card.deleteMany({ _list: list._id }));
     await List.deleteMany({ _board: req.params.id });
 
     return res.sendStatus(HTTPCode.OK);
+  },
+  async all(req, res) {
+    const boards = await Board.findById(req.params.id)
+      .populate({
+        path: 'lists',
+        populate: {
+          path: 'cards'
+        }
+      });
+    return res.json(boards);
   },
 };
