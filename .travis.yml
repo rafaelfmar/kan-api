@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-  - '8'
+  - '12'
 branches:
   only:
     - master
@@ -12,5 +12,5 @@ before_install:
   - npm update
 install:
   - npm install
-: - npm test
+  - npm test
   - npm run coveralls
