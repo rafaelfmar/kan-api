@@ -1,6 +1,16 @@
+sudo: false
 language: node_js
 node_js:
-  - 'stable'
+  - '8'
+branches:
+  only:
+    - master
 cache:
   directories:
-    - 'node_modules'
+    - node_modules
+before_install:
+  - npm update
+install:
+  - npm install
+: - npm test
+  - npm run coveralls
